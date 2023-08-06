@@ -3508,6 +3508,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coins: 100
   CoinsText: {fileID: 1060185235}
+  PurchaseConfirm: {fileID: 4025860092953820563, guid: a70bfc72dea6fe546a1972c18dc4d264,
+    type: 3}
 --- !u!4 &1779819925
 Transform:
   m_ObjectHideFlags: 0

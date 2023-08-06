@@ -10,7 +10,9 @@ public class ShopManager : MonoBehaviour
 
     public int[,] shopItems = new int[5, 5];
     public float coins;
-    public TextMeshProUGUI CoinsText; 
+    public TextMeshProUGUI CoinsText;
+    [SerializeField] public AudioSource PurchaseConfirm;
+    [SerializeField] public AudioSource PurchaseError;
 
 
     // Start is called before the first frame update
@@ -49,11 +51,20 @@ public class ShopManager : MonoBehaviour
             CoinsText.text = "Coins:" + coins.ToString();
             ButtonRef.GetComponent<ButtonInfo>().QuantityText.text = shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID].ToString();
 
+            //Audio for purchase
+            AudioSource newSound = Instantiate(PurchaseConfirm, transform.position, Quaternion.identity);
+            Destroy(newSound.gameObject, newSound.clip.length);
+
+
         } else if (coins < shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID])
         {
             //Current coins cannot purchase item
             CoinsText.text = "Coins: Not Enough!!";
 
+
+            //Purchase Error sound 
+            AudioSource newSound = Instantiate(PurchaseError, transform.position, Quaternion.identity);
+            Destroy(newSound.gameObject, newSound.clip.length);
         }
 
 

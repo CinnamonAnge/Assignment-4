@@ -32,8 +32,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    //Exit Program (Testing Purposes)
     void Exit()
     {
-
+        Application.Quit();
     }
 }
