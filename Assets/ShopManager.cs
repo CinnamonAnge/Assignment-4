@@ -52,9 +52,7 @@ public class ShopManager : MonoBehaviour
             CoinsText.text = "Coins:" + coins.ToString();
             ButtonRef.GetComponent<ButtonInfo>().QuantityText.text = shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID].ToString();
 
-        }
-
-        if(coins < shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID])
+        } else if (coins < shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID])
         {
 
             CoinsText.text = "Coins: Not Enough!!";
