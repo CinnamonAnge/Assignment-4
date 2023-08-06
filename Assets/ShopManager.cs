@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI; 
@@ -9,7 +10,7 @@ public class ShopManager : MonoBehaviour
 
     public int[,] shopItems = new int[5, 5];
     public float coins;
-    public Text CoinsText; 
+    public TextMeshProUGUI CoinsText; 
 
 
     // Start is called before the first frame update
@@ -30,10 +31,10 @@ public class ShopManager : MonoBehaviour
         shopItems[2, 4] = 40;
 
         //Quantity
-        shopItems[3, 1] = 10;
-        shopItems[3, 2] = 20;
-        shopItems[3, 3] = 30;
-        shopItems[3, 4] = 40;
+        shopItems[3, 1] = 0;
+        shopItems[3, 2] = 0;
+        shopItems[3, 3] = 0;
+        shopItems[3, 4] = 0;
     }
 
     // Update is called once per frame
@@ -50,6 +51,13 @@ public class ShopManager : MonoBehaviour
             shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++;
             CoinsText.text = "Coins:" + coins.ToString();
             ButtonRef.GetComponent<ButtonInfo>().QuantityText.text = shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID].ToString();
+
+        }
+
+        if(coins < shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID])
+        {
+
+            CoinsText.text = "Coins: Not Enough!!";
 
         }
 
