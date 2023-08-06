@@ -18,7 +18,7 @@ public class ShopManager : MonoBehaviour
     {
         CoinsText.text = "Coins:" + coins.ToString();
 
-
+        //Shop Item ID 
         shopItems[1,1] = 1;
         shopItems[1, 2] = 2;
         shopItems[1, 3] = 3;
@@ -37,7 +37,6 @@ public class ShopManager : MonoBehaviour
         shopItems[3, 4] = 0;
     }
 
-    // Update is called once per frame
     public void Purchase()
     {
         GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
@@ -45,8 +44,6 @@ public class ShopManager : MonoBehaviour
 
         if(coins >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID])
         {
-
-
             coins -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID];
             shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++;
             CoinsText.text = "Coins:" + coins.ToString();
@@ -54,7 +51,7 @@ public class ShopManager : MonoBehaviour
 
         } else if (coins < shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID])
         {
-
+            //Current coins cannot purchase item
             CoinsText.text = "Coins: Not Enough!!";
 
         }
