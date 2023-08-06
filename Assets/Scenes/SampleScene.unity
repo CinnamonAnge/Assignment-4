@@ -1252,7 +1252,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353756109}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8392582, y: 34.637985, z: 103.25855}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3508,7 +3508,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coins: 100
   CoinsText: {fileID: 1060185235}
-  PurchaseConfirm: {fileID: 4025860092953820563, guid: a70bfc72dea6fe546a1972c18dc4d264,
+  PurchaseConfirm: {fileID: 551774492433700509, guid: a70bfc72dea6fe546a1972c18dc4d264,
+    type: 3}
+  PurchaseError: {fileID: 4890654247793143648, guid: 31d965117506a9c42a7e50b8c78a7cec,
     type: 3}
 --- !u!4 &1779819925
 Transform:
@@ -3518,7 +3520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1779819923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -78.75414, y: 0.601264, z: 90}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
